@@ -1,10 +1,10 @@
 package com.example.librarymanagementsystem.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -19,4 +19,7 @@ public class Book {
     private LocalDate publicationYear;
 
     private String ISBN;
+
+    @OneToMany(mappedBy = "book")
+    private Set<BorrowingRecord> borrowingRecords;
 }
