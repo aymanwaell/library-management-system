@@ -19,12 +19,12 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll();
     }
 
-    public Optional<Book> getBookById(Long id) {
+    public Optional<Book> findById(Long id) {
         return bookRepository.findById(id);
     }
 
     @Override
-    public Book saveBook(Book book) {
+    public Book save(Book book) {
         return bookRepository.save(book);
     }
 

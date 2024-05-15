@@ -23,12 +23,12 @@ public class BookController {
 
     @GetMapping("/{id}")
     public Optional<Book> getBookById(@PathVariable Long id){
-        return bookService.getBookById(id);
+        return bookService.findById(id);
     }
 
     @PostMapping("/")
     public Book createBook(@RequestBody Book book){
-        return bookService.saveBook(book);
+        return bookService.save(book);
     }
 
     @PutMapping("/{id}")

@@ -9,9 +9,9 @@ public interface BookService {
 
     List<Book> getAllBooks();
 
-    Optional<Book> getBookById(Long id);
+    Optional<Book> findById(Long id);
 
-    Book saveBook(Book book);
+    Book save(Book book);
 
     Book updateBook(Long id, Book bookDetails);
 

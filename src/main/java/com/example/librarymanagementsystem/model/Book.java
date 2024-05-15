@@ -1,7 +1,6 @@
 package com.example.librarymanagementsystem.model;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -22,6 +21,10 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private Set<BorrowingRecord> borrowingRecords;
+
+    @ManyToOne
+    @JoinColumn(name = "patron_id")
+    private Patron borrowedBy;
 
     public long getId() {
         return id;
@@ -70,4 +73,13 @@ public class Book {
     public void setBorrowingRecords(Set<BorrowingRecord> borrowingRecords) {
         this.borrowingRecords = borrowingRecords;
     }
+
+    public Patron getBorrowedBy() {
+        return borrowedBy;
+    }
+
+    public void setBorrowedBy(Patron borrowedBy) {
+        this.borrowedBy = borrowedBy;
+    }
+
 }
