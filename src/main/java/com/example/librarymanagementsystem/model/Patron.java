@@ -8,6 +8,7 @@ import java.util.Set;
 @Entity
 public class Patron {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Entity
 public class BorrowingRecord {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
